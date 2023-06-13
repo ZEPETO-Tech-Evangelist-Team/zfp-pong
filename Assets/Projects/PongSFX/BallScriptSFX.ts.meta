@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: feedc60ee2049bc4ca32ef1ee9bf3758
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst ScoreScriptSFX_1 = require(\"./ScoreScriptSFX\");\r\nconst
+    UnityEngine_SceneManagement_1 = require(\"UnityEngine.SceneManagement\");\r\nclass
+    BallScriptSFX extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start()
+    {\r\n        this.AddForceToBall();\r\n    }\r\n    OnCollisionEnter(collision)
+    {\r\n        if (collision.gameObject.tag === \"WALL\") {\r\n            this.AddPointWhenBallHitsWall();\r\n           
+    this.ShakeCamera();\r\n            this.PlayBallImpactSound();\r\n           
+    this.PlayBallImpactParticleSystem(collision);\r\n        }\r\n        if (collision.gameObject.tag
+    === \"LAVA\") {\r\n            this.RestartGameWhenBallHitsLava();\r\n       
+    }\r\n    }\r\n    AddForceToBall() {\r\n        this.gameObject.GetComponent($typeof(UnityEngine_1.Rigidbody)).AddForce(new
+    UnityEngine_1.Vector3(this.forceAmount, this.forceAmount, 0), UnityEngine_1.ForceMode.Impulse);\r\n   
+    }\r\n    AddPointWhenBallHitsWall() {\r\n        UnityEngine_1.GameObject.Find(\"Score\").GetComponent($typeof(ScoreScriptSFX_1.default)).AddToScore();\r\n   
+    }\r\n    RestartGameWhenBallHitsLava() {\r\n        UnityEngine_SceneManagement_1.SceneManager.LoadScene(\"PongSceneSFX\");\r\n   
+    }\r\n    ShakeCamera() {\r\n        UnityEngine_1.GameObject.Find(\"Main Camera\").GetComponent($typeof(UnityEngine_1.Animator)).Play(\"CAMERA_SHAKE\");\r\n   
+    }\r\n    PlayBallImpactSound() {\r\n        this.GetComponent($typeof(UnityEngine_1.AudioSource)).Play();\r\n   
+    }\r\n    PlayBallImpactParticleSystem(collision) {\r\n        UnityEngine_1.GameObject.Instantiate(this.impactFX,
+    collision.contacts[0].point, UnityEngine_1.Quaternion.identity);\r\n    }\r\n}\r\nexports.default
+    = BallScriptSFX;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQmFsbFNjcmlwdFNGWC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkJhbGxTY3JpcHRTRlgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBNEk7QUFDNUksaURBQXFEO0FBQ3JELHFEQUEyQztBQUMzQyw2RUFBMkQ7QUFFM0QsTUFBcUIsYUFBYyxTQUFRLHFDQUFxQjtJQUk1RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLGNBQWMsRUFBRSxDQUFDO0lBQzFCLENBQUM7SUFFRCxnQkFBZ0IsQ0FBQyxTQUFvQjtRQUNqQyxJQUFHLFNBQVMsQ0FBQyxVQUFVLENBQUMsR0FBRyxLQUFLLE1BQU0sRUFBRTtZQUNwQyxJQUFJLENBQUMsd0JBQXdCLEVBQUUsQ0FBQztZQUVoQyxJQUFJLENBQUMsV0FBVyxFQUFFLENBQUM7WUFFbkIsSUFBSSxDQUFDLG1CQUFtQixFQUFFLENBQUM7WUFFM0IsSUFBSSxDQUFDLDRCQUE0QixDQUFDLFNBQVMsQ0FBQyxDQUFDO1NBQ2hEO1FBRUQsSUFBSSxTQUFTLENBQUMsVUFBVSxDQUFDLEdBQUcsS0FBSyxNQUFNLEVBQUU7WUFDckMsSUFBSSxDQUFDLDJCQUEyQixFQUFFLENBQUM7U0FDdEM7SUFDTCxDQUFDO0lBRUQsY0FBYztRQUNWLElBQUksQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLHVCQUFTLEdBQUksUUFBUSxDQUFDLElBQUkscUJBQU8sQ0FBQyxJQUFJLENBQUMsV0FBVyxFQUFDLElBQUksQ0FBQyxXQUFXLEVBQUMsQ0FBQyxDQUFDLEVBQUUsdUJBQVMsQ0FBQyxPQUFPLENBQUMsQ0FBQztJQUM1SCxDQUFDO0lBRUQsd0JBQXdCO1FBQ3BCLHdCQUFVLENBQUMsSUFBSSxDQUFDLE9BQU8sQ0FBQyxDQUFDLFlBQVksU0FBQyx3QkFBVyxHQUFJLFVBQVUsRUFBRSxDQUFDO0lBQ3RFLENBQUM7SUFFRCwyQkFBMkI7UUFDdkIsMENBQVksQ0FBQyxTQUFTLENBQUMsY0FBYyxDQUFDLENBQUM7SUFDM0MsQ0FBQztJQUVELFdBQVc7UUFDUCx3QkFBVSxDQUFDLElBQUksQ0FBQyxhQUFhLENBQUMsQ0FBQyxZQUFZLFNBQUMsc0JBQVEsR0FBSSxJQUFJLENBQUMsY0FBYyxDQUFDLENBQUM7SUFDakYsQ0FBQztJQUVELG1CQUFtQjtRQUNmLElBQUksQ0FBQyxZQUFZLFNBQUMseUJBQVcsR0FBSSxJQUFJLEVBQUUsQ0FBQztJQUM1QyxDQUFDO0lBRUQsNEJBQTRCLENBQUMsU0FBb0I7UUFDN0Msd0JBQVUsQ0FBQyxXQUFXLENBQUMsSUFBSSxDQUFDLFFBQVEsRUFBRSxTQUFTLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxDQUFDLEtBQUssRUFBRSx3QkFBVSxDQUFDLFFBQVEsQ0FBQyxDQUFDO0lBQzVGLENBQUM7Q0FDSjtBQS9DRCxnQ0ErQ0MifQ==","assetPath":"Assets/Projects/PongSFX/BallScriptSFX.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"forceAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"UnityEngine.CoreModule","name":"impactFX","type":"UnityEngine.GameObject","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"BallScriptSFX","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 2fdcf76005c9f525280111e5d0db3d1d
+  onlyWriteTrigger: 0

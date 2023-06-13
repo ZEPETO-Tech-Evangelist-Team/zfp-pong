@@ -1,0 +1,26 @@
+{
+  "name": "zfp-pong",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@zepeto/sandbox": "file:Library/Packages/zepeto-sandbox.tgz",
+    "typescript": "^4.3.5",
+    "zepeto-script-compiler": "file:Library/Packages/zepeto-script-compiler.tgz"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/ZEPETO-Tech-Evangelist-Team/zfp-pong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZEPETO-Tech-Evangelist-Team/zfp-pong/issues"
+  },
+  "homepage": "https://github.com/ZEPETO-Tech-Evangelist-Team/zfp-pong#readme"
+}

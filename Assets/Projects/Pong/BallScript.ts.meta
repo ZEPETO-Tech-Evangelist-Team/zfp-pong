@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 8c74da86b8326c34fbb229f0792f3fb1
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst UnityEngine_SceneManagement_1
+    = require(\"UnityEngine.SceneManagement\");\r\nconst ScoreScript_1 = require(\"./ScoreScript\");\r\nclass
+    BallScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n       
+    this.AddForceToBall();\r\n    }\r\n    OnCollisionEnter(collider) {\r\n       
+    if (collider.gameObject.tag === \"WALL\") {\r\n            this.AddPointWhenBallHitsWall();\r\n       
+    }\r\n        if (collider.gameObject.tag === \"LAVA\") {\r\n            this.RestartGameWhenBallHitsLava();\r\n       
+    }\r\n    }\r\n    AddForceToBall() {\r\n        this.gameObject.GetComponent($typeof(UnityEngine_1.Rigidbody)).AddForce(new
+    UnityEngine_1.Vector3(this.ForceAmount, this.ForceAmount, 0), UnityEngine_1.ForceMode.Impulse);\r\n   
+    }\r\n    AddPointWhenBallHitsWall() {\r\n        UnityEngine_1.GameObject.Find(\"Score\").GetComponent($typeof(ScoreScript_1.default)).AddToScore();\r\n   
+    }\r\n    RestartGameWhenBallHitsLava() {\r\n        UnityEngine_SceneManagement_1.SceneManager.LoadScene(\"PongScene\");\r\n   
+    }\r\n}\r\nexports.default = BallScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQmFsbFNjcmlwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkJhbGxTY3JpcHQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBa0Y7QUFFbEYsaURBQXFEO0FBQ3JELDZFQUEyRDtBQUMzRCwrQ0FBd0M7QUFFeEMsTUFBcUIsVUFBVyxTQUFRLHFDQUFxQjtJQUd6RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLGNBQWMsRUFBRSxDQUFDO0lBQzFCLENBQUM7SUFFRCxnQkFBZ0IsQ0FBQyxRQUFtQjtRQUNoQyxJQUFJLFFBQVEsQ0FBQyxVQUFVLENBQUMsR0FBRyxLQUFLLE1BQU0sRUFBRTtZQUNwQyxJQUFJLENBQUMsd0JBQXdCLEVBQUUsQ0FBQztTQUNuQztRQUVELElBQUksUUFBUSxDQUFDLFVBQVUsQ0FBQyxHQUFHLEtBQUssTUFBTSxFQUFFO1lBQ3BDLElBQUksQ0FBQywyQkFBMkIsRUFBRSxDQUFDO1NBQ3RDO0lBQ0wsQ0FBQztJQUVELGNBQWM7UUFDVixJQUFJLENBQUMsVUFBVSxDQUFDLFlBQVksU0FBQyx1QkFBUyxHQUFJLFFBQVEsQ0FBQyxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBQyxJQUFJLENBQUMsV0FBVyxFQUFDLENBQUMsQ0FBQyxFQUFFLHVCQUFTLENBQUMsT0FBTyxDQUFDLENBQUM7SUFDNUgsQ0FBQztJQUVELHdCQUF3QjtRQUNwQix3QkFBVSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxZQUFZLFNBQUMscUJBQVcsR0FBSSxVQUFVLEVBQUUsQ0FBQztJQUN0RSxDQUFDO0lBRUQsMkJBQTJCO1FBQ3ZCLDBDQUFZLENBQUMsU0FBUyxDQUFDLFdBQVcsQ0FBQyxDQUFDO0lBQ3hDLENBQUM7Q0FFSjtBQTdCRCw2QkE2QkMifQ==","assetPath":"Assets/Projects/Pong/BallScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"ForceAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"BallScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: e02f2f465a5a22d6486962f200e25dc2
+  onlyWriteTrigger: 0

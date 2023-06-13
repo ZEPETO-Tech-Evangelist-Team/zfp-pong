@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 8fe1827e77cec8d4e8d37afbbaedd460
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass PaddleScriptSFX extends
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n    }\r\n    Update()
+    {\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.LeftArrow))
+    {\r\n            this.gameObject.transform.Translate(new UnityEngine_1.Vector3(-this.xSpeed
+    * UnityEngine_1.Time.deltaTime, 0, 0));\r\n        }\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.RightArrow))
+    {\r\n            this.gameObject.transform.Translate(new UnityEngine_1.Vector3(this.xSpeed
+    * UnityEngine_1.Time.deltaTime, 0, 0));\r\n        }\r\n    }\r\n}\r\nexports.default
+    = PaddleScriptSFX;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGFkZGxlU2NyaXB0U0ZYLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiUGFkZGxlU2NyaXB0U0ZYLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQWtGO0FBQ2xGLGlEQUFxRDtBQUVyRCxNQUFxQixlQUFnQixTQUFRLHFDQUFxQjtJQUc5RCxLQUFLO0lBRUwsQ0FBQztJQUVELE1BQU07UUFDRixJQUFJLG1CQUFLLENBQUMsTUFBTSxDQUFDLHFCQUFPLENBQUMsU0FBUyxDQUFDLEVBQUU7WUFDakMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDLElBQUkscUJBQU8sQ0FBQyxDQUFDLElBQUksQ0FBQyxNQUFNLEdBQUcsa0JBQUksQ0FBQyxTQUFTLEVBQUMsQ0FBQyxFQUFDLENBQUMsQ0FBQyxDQUFDLENBQUM7U0FDdkY7UUFFRCxJQUFJLG1CQUFLLENBQUMsTUFBTSxDQUFDLHFCQUFPLENBQUMsVUFBVSxDQUFDLEVBQUU7WUFDbEMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDLElBQUkscUJBQU8sQ0FBQyxJQUFJLENBQUMsTUFBTSxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUMsRUFBQyxDQUFDLENBQUMsQ0FBQyxDQUFDO1NBQ3RGO0lBQ0wsQ0FBQztDQUdKO0FBbEJELGtDQWtCQyJ9","assetPath":"Assets/Projects/PongSFX/PaddleScriptSFX.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"xSpeed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"PaddleScriptSFX","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 13dbba9edaeb710c58ebe9c7246b270e
+  onlyWriteTrigger: 0
