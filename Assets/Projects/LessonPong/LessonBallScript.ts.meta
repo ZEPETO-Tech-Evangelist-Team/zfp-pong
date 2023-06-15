@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: a6f682a4adb782e4583036df93cb8635
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    UnityEngine_SceneManagement_1 = require(\"UnityEngine.SceneManagement\");\r\nconst
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst LessonScoreScript_1 =
+    require(\"./LessonScoreScript\");\r\nclass LessonBallScript extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    Start() {\r\n        this.ForceAmount = 10;\r\n        this.AddForceToBall();\r\n   
+    }\r\n    Update() {\r\n    }\r\n    OnCollisionEnter(colliderThatWasHit) {\r\n       
+    if (colliderThatWasHit.gameObject.tag == \"LESSON_WALL\") {\r\n            this.AddPointWhenBallHitsWall();\r\n       
+    }\r\n        if (colliderThatWasHit.gameObject.tag == \"LESSON_LAVA\") {\r\n           
+    this.RestartGameWhenBallHitsLava();\r\n        }\r\n    }\r\n    AddForceToBall()
+    {\r\n        this.gameObject.GetComponent($typeof(UnityEngine_1.Rigidbody)).AddForce(new
+    UnityEngine_1.Vector3(this.ForceAmount, this.ForceAmount, 0), UnityEngine_1.ForceMode.Impulse);\r\n   
+    }\r\n    AddPointWhenBallHitsWall() {\r\n        UnityEngine_1.GameObject.Find(\"Score\").GetComponent($typeof(LessonScoreScript_1.default)).AddToScore();\r\n   
+    }\r\n    RestartGameWhenBallHitsLava() {\r\n        UnityEngine_SceneManagement_1.SceneManager.LoadScene(\"LessonPongExample\");\r\n   
+    }\r\n}\r\nexports.default = LessonBallScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGVzc29uQmFsbFNjcmlwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkxlc3NvbkJhbGxTY3JpcHQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBa0Y7QUFDbEYsNkVBQTJEO0FBQzNELGlEQUFxRDtBQUNyRCwyREFBb0Q7QUFFcEQsTUFBcUIsZ0JBQWlCLFNBQVEscUNBQXFCO0lBRy9ELEtBQUs7UUFDRCxJQUFJLENBQUMsV0FBVyxHQUFHLEVBQUUsQ0FBQztRQUN0QixJQUFJLENBQUMsY0FBYyxFQUFFLENBQUM7SUFDMUIsQ0FBQztJQUVELE1BQU07SUFFTixDQUFDO0lBRUQsZ0JBQWdCLENBQUMsa0JBQTZCO1FBQzFDLElBQUksa0JBQWtCLENBQUMsVUFBVSxDQUFDLEdBQUcsSUFBSSxhQUFhLEVBQUU7WUFDcEQsSUFBSSxDQUFDLHdCQUF3QixFQUFFLENBQUM7U0FDbkM7UUFFRCxJQUFJLGtCQUFrQixDQUFDLFVBQVUsQ0FBQyxHQUFHLElBQUksYUFBYSxFQUFFO1lBQ3BELElBQUksQ0FBQywyQkFBMkIsRUFBRSxDQUFDO1NBQ3RDO0lBQ0wsQ0FBQztJQUVELGNBQWM7UUFDVixJQUFJLENBQUMsVUFBVSxDQUFDLFlBQVksU0FBQyx1QkFBUyxHQUFJLFFBQVEsQ0FBQyxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBQyxJQUFJLENBQUMsV0FBVyxFQUFDLENBQUMsQ0FBQyxFQUFFLHVCQUFTLENBQUMsT0FBTyxDQUFDLENBQUM7SUFDNUgsQ0FBQztJQUVELHdCQUF3QjtRQUNwQix3QkFBVSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxZQUFZLFNBQUMsMkJBQWlCLEdBQUksVUFBVSxFQUFFLENBQUM7SUFDNUUsQ0FBQztJQUVELDJCQUEyQjtRQUN2QiwwQ0FBWSxDQUFDLFNBQVMsQ0FBQyxtQkFBbUIsQ0FBQyxDQUFDO0lBQ2hELENBQUM7Q0FDSjtBQWpDRCxtQ0FpQ0MifQ==","assetPath":"Assets/Projects/LessonPong/LessonBallScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"ForceAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"LessonBallScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 975752c449ad4af67aefcf7d62948f65
+  onlyWriteTrigger: 0

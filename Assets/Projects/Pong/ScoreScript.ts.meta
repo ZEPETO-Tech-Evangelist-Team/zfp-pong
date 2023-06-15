@@ -19,10 +19,39 @@ ScriptedImporter:
   WrapperFilters: []
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
-    { value: true });\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
-    ScoreScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n   
-    }\r\n    AddToScore() {\r\n        this.ScoreAmount = this.ScoreAmount + 1;\r\n       
+    { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
+    UnityEngine_UI_1 = require(\"UnityEngine.UI\");\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass
+    ScoreScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    //public static
+    StaticFunction() {\r\n    //console.log(\"I''m a Static Function\");\r\n    //}\r\n   
+    //public MyFunction($test : number, $test2 : string) : number {\r\n    //return
+    $test + 1;\r\n    //}\r\n    MakeSandwich(ingredient1, ingredient2) {\r\n       
+    return ingredient1 + ingredient2;\r\n    }\r\n    SayHello() {\r\n        UnityEngine_1.Debug.Log(\"Welcome
+    to our castle!\");\r\n    }\r\n    Start() {\r\n        //this.ScoreText               
+    Reference to the \"ScoreText\" variable in this script\r\n        // =                           
+    = is an assignment operator, we need to assign the variable on the left side
+    with the value we get from the right side\r\n        //this.gameObject              
+    Reference to the GameObject this script is attached to\r\n        //GetComponent<Text>()         
+    Get the \"Text\" component that exist on the GameObject this script is attached
+    to\r\n        this.ScoreText = this.gameObject.GetComponent($typeof(UnityEngine_UI_1.Text));\r\n   
+    }\r\n    //Declaring a function called \"AddToScore\"\r\n    AddToScore() {\r\n       
+    //this.ScoreAmount              Reference to the \"ScoreAmount\" variable in
+    this script\r\n        //= this.ScoreAmount + 1        Assigning the value of
+    \"ScoreAmount\" to itself + 1\r\n        //NOTE:                         We can
+    add 1 to ScoreAmount because \"ScoreAmount\" is of type \"number\"\r\n       
+    this.ScoreAmount = this.ScoreAmount + 1;\r\n        //this.ScoreAmount             
+    Reference to the \"ScoreAmount\" variable in this script\r\n        //.text                        
+    \"ScoreAmount\" is of type \"Text\". The \"Text\" class has a variable \"text\"
+    (t is lowercase) that is of type \"string\"\r\n        // =                           
+    = is an assignment operator, we need to assign the variable on the left side
+    with the value we get from the right side\r\n        //                             
+    Assigning SocreText.text to the string \"Score: \"\r\n        //this.ScoreAmount.toString(); 
+    \"ScoreAmount\" is of type \"number\"\r\n        //                             
+    The \"number\" class has a function called \"toString()\"\r\n        //                             
+    \"toString()\" allows you to convert a \"number\" type to a \"string\" type\r\n       
+    // +                            Converting \"number\" type to \"string\" type
+    allows you to use the \"+\" operator\r\n        //                             
+    Adding 2 strings together gives you: \"Score: \" + \"1\" = \"Score: 1\"\r\n       
     this.ScoreText.text = \"Score: \" + this.ScoreAmount.toString();\r\n    }\r\n}\r\nexports.default
-    = ScoreScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU2NvcmVTY3JpcHQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJTY29yZVNjcmlwdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUNBLGlEQUFxRDtBQUVyRCxNQUFxQixXQUFZLFNBQVEscUNBQXFCO0lBSTFELEtBQUs7SUFFTCxDQUFDO0lBRU0sVUFBVTtRQUNiLElBQUksQ0FBQyxXQUFXLEdBQUcsSUFBSSxDQUFDLFdBQVcsR0FBRyxDQUFDLENBQUM7UUFDeEMsSUFBSSxDQUFDLFNBQVMsQ0FBQyxJQUFJLEdBQUcsU0FBUyxHQUFHLElBQUksQ0FBQyxXQUFXLENBQUMsUUFBUSxFQUFFLENBQUM7SUFDbEUsQ0FBQztDQUNKO0FBWkQsOEJBWUMifQ==","assetPath":"Assets/Projects/Pong/ScoreScript.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"ScoreText","type":"UnityEngine.UI.Text","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"ScoreAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"ScoreScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: c475a233c87aae5bad41b8a94b4f15c1
+    = ScoreScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiU2NvcmVTY3JpcHQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJTY29yZVNjcmlwdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLDZDQUFvQztBQUNwQyxtREFBc0M7QUFDdEMsaURBQXFEO0FBRXJELE1BQXFCLFdBQVksU0FBUSxxQ0FBcUI7SUFPMUQsa0NBQWtDO0lBQzlCLHVDQUF1QztJQUMzQyxHQUFHO0lBRUgsK0RBQStEO0lBQzNELG1CQUFtQjtJQUN2QixHQUFHO0lBRUksWUFBWSxDQUFDLFdBQW9CLEVBQUUsV0FBb0I7UUFDMUQsT0FBTyxXQUFXLEdBQUcsV0FBVyxDQUFDO0lBQ3JDLENBQUM7SUFFTSxRQUFRO1FBQ1gsbUJBQUssQ0FBQyxHQUFHLENBQUMsd0JBQXdCLENBQUMsQ0FBQztJQUN4QyxDQUFDO0lBTUQsS0FBSztRQUVELG9GQUFvRjtRQUNwRixzSkFBc0o7UUFDdEosc0ZBQXNGO1FBQ3RGLGdIQUFnSDtRQUNoSCxJQUFJLENBQUMsU0FBUyxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLHFCQUFJLEVBQUcsQ0FBQztJQUUxRCxDQUFDO0lBRUQsMENBQTBDO0lBQ25DLFVBQVU7UUFFYixzRkFBc0Y7UUFDdEYsa0ZBQWtGO1FBQ2xGLHFHQUFxRztRQUNyRyxJQUFJLENBQUMsV0FBVyxHQUFHLElBQUksQ0FBQyxXQUFXLEdBQUcsQ0FBQyxDQUFDO1FBRXhDLHNGQUFzRjtRQUN0RixpSkFBaUo7UUFDakosc0pBQXNKO1FBQ3RKLGdGQUFnRjtRQUNoRixpRUFBaUU7UUFDakUscUZBQXFGO1FBQ3JGLHFHQUFxRztRQUNyRyw0R0FBNEc7UUFDNUcsaUdBQWlHO1FBQ2pHLElBQUksQ0FBQyxTQUFTLENBQUMsSUFBSSxHQUFHLFNBQVMsR0FBRyxJQUFJLENBQUMsV0FBVyxDQUFDLFFBQVEsRUFBRSxDQUFDO0lBQ2xFLENBQUM7Q0FDSjtBQXhERCw4QkF3REMifQ==","assetPath":"Assets/Projects/Pong/ScoreScript.ts","manifest":{"properties":[{"assembly":"UnityEngine.UI","name":"ScoreText","type":"UnityEngine.UI.Text","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"ScoreAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"ScoreScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 1413616e8d392eb74620b91bbcdd1dc7
   onlyWriteTrigger: 0

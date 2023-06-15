@@ -20,16 +20,52 @@ ScriptedImporter:
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
     { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
-    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst UnityEngine_SceneManagement_1
-    = require(\"UnityEngine.SceneManagement\");\r\nconst ScoreScript_1 = require(\"./ScoreScript\");\r\nclass
-    BallScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n       
-    this.AddForceToBall();\r\n    }\r\n    OnCollisionEnter(collider) {\r\n       
-    if (collider.gameObject.tag === \"WALL\") {\r\n            this.AddPointWhenBallHitsWall();\r\n       
-    }\r\n        if (collider.gameObject.tag === \"LAVA\") {\r\n            this.RestartGameWhenBallHitsLava();\r\n       
-    }\r\n    }\r\n    AddForceToBall() {\r\n        this.gameObject.GetComponent($typeof(UnityEngine_1.Rigidbody)).AddForce(new
-    UnityEngine_1.Vector3(this.ForceAmount, this.ForceAmount, 0), UnityEngine_1.ForceMode.Impulse);\r\n   
-    }\r\n    AddPointWhenBallHitsWall() {\r\n        UnityEngine_1.GameObject.Find(\"Score\").GetComponent($typeof(ScoreScript_1.default)).AddToScore();\r\n   
-    }\r\n    RestartGameWhenBallHitsLava() {\r\n        UnityEngine_SceneManagement_1.SceneManager.LoadScene(\"PongScene\");\r\n   
-    }\r\n}\r\nexports.default = BallScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQmFsbFNjcmlwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkJhbGxTY3JpcHQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBa0Y7QUFFbEYsaURBQXFEO0FBQ3JELDZFQUEyRDtBQUMzRCwrQ0FBd0M7QUFFeEMsTUFBcUIsVUFBVyxTQUFRLHFDQUFxQjtJQUd6RCxLQUFLO1FBQ0QsSUFBSSxDQUFDLGNBQWMsRUFBRSxDQUFDO0lBQzFCLENBQUM7SUFFRCxnQkFBZ0IsQ0FBQyxRQUFtQjtRQUNoQyxJQUFJLFFBQVEsQ0FBQyxVQUFVLENBQUMsR0FBRyxLQUFLLE1BQU0sRUFBRTtZQUNwQyxJQUFJLENBQUMsd0JBQXdCLEVBQUUsQ0FBQztTQUNuQztRQUVELElBQUksUUFBUSxDQUFDLFVBQVUsQ0FBQyxHQUFHLEtBQUssTUFBTSxFQUFFO1lBQ3BDLElBQUksQ0FBQywyQkFBMkIsRUFBRSxDQUFDO1NBQ3RDO0lBQ0wsQ0FBQztJQUVELGNBQWM7UUFDVixJQUFJLENBQUMsVUFBVSxDQUFDLFlBQVksU0FBQyx1QkFBUyxHQUFJLFFBQVEsQ0FBQyxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBQyxJQUFJLENBQUMsV0FBVyxFQUFDLENBQUMsQ0FBQyxFQUFFLHVCQUFTLENBQUMsT0FBTyxDQUFDLENBQUM7SUFDNUgsQ0FBQztJQUVELHdCQUF3QjtRQUNwQix3QkFBVSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxZQUFZLFNBQUMscUJBQVcsR0FBSSxVQUFVLEVBQUUsQ0FBQztJQUN0RSxDQUFDO0lBRUQsMkJBQTJCO1FBQ3ZCLDBDQUFZLENBQUMsU0FBUyxDQUFDLFdBQVcsQ0FBQyxDQUFDO0lBQ3hDLENBQUM7Q0FFSjtBQTdCRCw2QkE2QkMifQ==","assetPath":"Assets/Projects/Pong/BallScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"ForceAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"BallScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: e02f2f465a5a22d6486962f200e25dc2
+    UnityEngine_UI_1 = require(\"UnityEngine.UI\");\r\nconst ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst
+    UnityEngine_SceneManagement_1 = require(\"UnityEngine.SceneManagement\");\r\nconst
+    ScoreScript_1 = require(\"./ScoreScript\");\r\nclass BallScript extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    //=====================EVENT FUNCTIONS============================================================\r\n   
+    //Start() gets called once when the game starts\r\n    Start() {\r\n        this.ForceAmount
+    = 5;\r\n        //Calling \"AddForceToBall()\" function inside the Start function\r\n       
+    this.AddForceToBall();\r\n    }\r\n    //OnCollisionEnter gets called when the
+    GameObject this script is attached to hits a Collider\r\n    //The Collider of
+    the GameObject you hit (we name it \"colliderThatWasHit\") is passed into the
+    OnCollisionEnter function\r\n    OnCollisionEnter(colliderThatWasHit) {\r\n       
+    //Check if the collider of the GameObject you hit is tagged as \"WALL\"\r\n       
+    if (colliderThatWasHit.gameObject.tag === \"WALL\") {\r\n            //If the
+    GameObject of the collider you hit is tagged as \"WALL\", then call the \"AddPointWhenBallHitsWall()\"
+    function\r\n            this.AddPointWhenBallHitsWall();\r\n        }\r\n       
+    //Check if the collider of the GameObject you hit is tagged as \"LAVA\"\r\n       
+    if (colliderThatWasHit.gameObject.tag === \"LAVA\") {\r\n            //If the
+    GameObject of the collider you hit is tagged as \"LAVA\", then call the \"RestartGameWhenBallHitsLava()\"
+    function\r\n            this.RestartGameWhenBallHitsLava();\r\n        }\r\n   
+    }\r\n    //==========================================================================================\r\n   
+    //=====================FUNCTIONS============================================================\r\n   
+    //Declaring a function called \"AddForceToBall\"\r\n    AddForceToBall() {\r\n       
+    let ballForce = new UnityEngine_1.Vector3(this.ForceAmount, this.ForceAmount,
+    0);\r\n        this.gameObject.GetComponent($typeof(UnityEngine_1.Rigidbody)).AddForce(ballForce,
+    UnityEngine_1.ForceMode.Impulse);\r\n        //this.gameObject              
+    reference to the GameObject that this script is attached to\r\n        //======================================================================================\r\n       
+    //GetComponent<Rigidbody>()     reference to the \"Rigidbody\" class component
+    on the GameObject\r\n        //======================================================================================\r\n       
+    //AddForce                      calls the \"AddForce($force: Vector3, $mode:
+    ForceMode)\" function that exist on the \"Rigidbody\" class\r\n        //NOTE:                        
+    notice that \"AddForce\" needs 2 parameters (pieces of information), a Vector3
+    class and a ForceMode enum\r\n    }\r\n    //Declaring a function called \"AddPointWhenBallHitsWall\"\r\n   
+    AddPointWhenBallHitsWall() {\r\n        //Debug.LogError(GameObject.Find(\"Score\").GetComponent<ScoreScript>().MyFunction(1,
+    \"blah\"));\r\n        UnityEngine_1.GameObject.Find(\"Score\").GetComponent($typeof(ScoreScript_1.default)).AddToScore();\r\n       
+    //GameObject.Find(\"Score\")      get the GameObject class and call the \"Find\"
+    function, which will look for a GameObject in the scene named \"Score\"\r\n       
+    //NOTE                          \"Find($name: string)\" function takes a parameter
+    of type \"string\"\r\n        //======================================================================================\r\n       
+    //GetComponent<ScoreScript>()   reference to the \"ScoreScript\" class component
+    on the \"Score\" GameObject\r\n        //======================================================================================\r\n       
+    //AddToScore()                  call the \"AddToScore()\" function inside the
+    \"ScoreScript\" class component\r\n    }\r\n    //Declaring a function called
+    \"RestartGameWhenBallHitsLava\"\r\n    RestartGameWhenBallHitsLava() {\r\n       
+    UnityEngine_SceneManagement_1.SceneManager.LoadScene(\"PongScene\");\r\n       
+    //\"SceneManager\" class has a \"LoadScene($sceneName: string)\" function that
+    takes a \"string\" parameter\r\n        //\"LoadScene($sceneName: string)\" will
+    load a Unity scene named \"PongScene\"\r\n    }\r\n}\r\nexports.default = BallScript;\r\n//#
+    sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiQmFsbFNjcmlwdC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIkJhbGxTY3JpcHQudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSw2Q0FBeUY7QUFDekYsbURBQXNDO0FBQ3RDLGlEQUFxRDtBQUNyRCw2RUFBMkQ7QUFDM0QsK0NBQXdDO0FBR3hDLE1BQXFCLFVBQVcsU0FBUSxxQ0FBcUI7SUFJekQsa0dBQWtHO0lBRWxHLCtDQUErQztJQUMvQyxLQUFLO1FBQ0QsSUFBSSxDQUFDLFdBQVcsR0FBRyxDQUFDLENBQUM7UUFDckIsK0RBQStEO1FBQy9ELElBQUksQ0FBQyxjQUFjLEVBQUUsQ0FBQztJQUMxQixDQUFDO0lBRUQsNkZBQTZGO0lBQzdGLHVIQUF1SDtJQUN2SCxnQkFBZ0IsQ0FBQyxrQkFBNkI7UUFFMUMscUVBQXFFO1FBQ3JFLElBQUksa0JBQWtCLENBQUMsVUFBVSxDQUFDLEdBQUcsS0FBSyxNQUFNLEVBQUU7WUFFOUMsb0hBQW9IO1lBQ3BILElBQUksQ0FBQyx3QkFBd0IsRUFBRSxDQUFDO1NBRW5DO1FBRUQscUVBQXFFO1FBQ3JFLElBQUksa0JBQWtCLENBQUMsVUFBVSxDQUFDLEdBQUcsS0FBSyxNQUFNLEVBQUU7WUFFOUMsdUhBQXVIO1lBQ3ZILElBQUksQ0FBQywyQkFBMkIsRUFBRSxDQUFDO1NBQ3RDO0lBQ0wsQ0FBQztJQUVELDRGQUE0RjtJQUM1Riw0RkFBNEY7SUFFNUYsOENBQThDO0lBQzlDLGNBQWM7UUFDVixJQUFJLFNBQVMsR0FBWSxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLFdBQVcsRUFBRSxJQUFJLENBQUMsV0FBVyxFQUFFLENBQUMsQ0FBQyxDQUFDO1FBRTVFLElBQUksQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLHVCQUFTLEdBQUksUUFBUSxDQUFDLFNBQVMsRUFBRSx1QkFBUyxDQUFDLE9BQU8sQ0FBQyxDQUFDO1FBRWpGLDJGQUEyRjtRQUUzRix3RkFBd0Y7UUFFeEYsOEZBQThGO1FBRTlGLHdGQUF3RjtRQUV4RixvSUFBb0k7UUFDcEksdUlBQXVJO0lBQzNJLENBQUM7SUFFRCx3REFBd0Q7SUFDeEQsd0JBQXdCO1FBQ3BCLDZGQUE2RjtRQUU3Rix3QkFBVSxDQUFDLElBQUksQ0FBQyxPQUFPLENBQUMsQ0FBQyxZQUFZLFNBQUMscUJBQVcsR0FBSSxVQUFVLEVBQUUsQ0FBQztRQUVsRSxrSkFBa0o7UUFDbEosaUdBQWlHO1FBRWpHLHdGQUF3RjtRQUV4Rix3R0FBd0c7UUFFeEcsd0ZBQXdGO1FBRXhGLHlHQUF5RztJQUU3RyxDQUFDO0lBRUQsMkRBQTJEO0lBQzNELDJCQUEyQjtRQUV2QiwwQ0FBWSxDQUFDLFNBQVMsQ0FBQyxXQUFXLENBQUMsQ0FBQztRQUVwQyxxR0FBcUc7UUFDckcsMkVBQTJFO0lBRS9FLENBQUM7Q0FFSjtBQW5GRCw2QkFtRkMifQ==","assetPath":"Assets/Projects/Pong/BallScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"ForceAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"BallScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 840859ccc8c67a2327cb446e82acd517
   onlyWriteTrigger: 0

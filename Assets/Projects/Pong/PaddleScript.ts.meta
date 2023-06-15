@@ -20,13 +20,42 @@ ScriptedImporter:
   wrapperOutputDirectory: Generated
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
     { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
-    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass PaddleScript extends ZEPETO_Script_1.ZepetoScriptBehaviour
-    {\r\n    Start() {\r\n    }\r\n    Update() {\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.LeftArrow))
-    {\r\n            this.MovePaddleLeft();\r\n        }\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.RightArrow))
-    {\r\n            this.MovePaddleRight();\r\n        }\r\n    }\r\n    MovePaddleLeft()
-    {\r\n        this.gameObject.transform.Translate(new UnityEngine_1.Vector3(-this.XSpeed
-    * UnityEngine_1.Time.deltaTime, 0, 0));\r\n    }\r\n    MovePaddleRight() {\r\n       
-    this.gameObject.transform.Translate(new UnityEngine_1.Vector3(this.XSpeed * UnityEngine_1.Time.deltaTime,
-    0, 0));\r\n    }\r\n}\r\nexports.default = PaddleScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGFkZGxlU2NyaXB0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiUGFkZGxlU2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQTREO0FBQzVELGlEQUFxRDtBQUVyRCxNQUFxQixZQUFhLFNBQVEscUNBQXFCO0lBRzNELEtBQUs7SUFFTCxDQUFDO0lBRUQsTUFBTTtRQUNGLElBQUksbUJBQUssQ0FBQyxNQUFNLENBQUMscUJBQU8sQ0FBQyxTQUFTLENBQUMsRUFBRTtZQUNqQyxJQUFJLENBQUMsY0FBYyxFQUFFLENBQUM7U0FDekI7UUFFRCxJQUFJLG1CQUFLLENBQUMsTUFBTSxDQUFDLHFCQUFPLENBQUMsVUFBVSxDQUFDLEVBQUU7WUFDbEMsSUFBSSxDQUFDLGVBQWUsRUFBRSxDQUFDO1NBQzFCO0lBQ0wsQ0FBQztJQUVELGNBQWM7UUFDVixJQUFJLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsSUFBSSxxQkFBTyxDQUFDLENBQUMsSUFBSSxDQUFDLE1BQU0sR0FBRyxrQkFBSSxDQUFDLFNBQVMsRUFBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUN4RixDQUFDO0lBRUQsZUFBZTtRQUNYLElBQUksQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLE1BQU0sR0FBRyxrQkFBSSxDQUFDLFNBQVMsRUFBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztJQUN2RixDQUFDO0NBQ0o7QUF4QkQsK0JBd0JDIn0=","assetPath":"Assets/Projects/Pong/PaddleScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"XSpeed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"PaddleScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: aab16f28d8b3dd5705c0196dfd161951
+    ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nconst ScoreScript_1 = require(\"./ScoreScript\");\r\nclass
+    PaddleScript extends ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    //Start()
+    gets called once when the game starts\r\n    Start() {\r\n        //ScoreScript.StaticFunction();\r\n   
+    }\r\n    //Update() gets called once every frame\r\n    Update() {\r\n       
+    //If statement that checks to see the left arrow key is pressed down this frame\r\n       
+    //If statements check to see if the condition inside the ( ) is true or false,
+    if it is true, then it will run the code inside { }\r\n        //Input                        
+    get the \"Input\" class\r\n        //GetKey(KeyCode.LeftArrow)     call the \"GetKey\"
+    function inside the \"Input\" class    \r\n        //NOTE:                        
+    \"GetKey\" function returns true or false (if you hover over \"GetKey\", you
+    can see the function details)                \r\n        //(KeyCode.LeftArrow)          
+    Pass in a \"KeyCode\" enum to the \"GetKey\" class.\r\n        //                             
+    \"GetKey\" function will return true or false based on if the left arrow key
+    is pressed down this frame\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.LeftArrow))
+    {\r\n            //if the left arrow was pressed, then call the \"MovePaddleLeft()\"
+    function\r\n            this.MovePaddleLeft();\r\n        }\r\n        //Same
+    behavior as the above if statement, except this one checks if the right arrow
+    key is pressed down this frame\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.RightArrow))
+    {\r\n            //if the right arrow was pressed, then call the \"MovePaddleLeft()\"
+    function\r\n            this.MovePaddleRight();\r\n        }\r\n    }\r\n   
+    //Declaring the \"MovePaddleLeft()\" function\r\n    MovePaddleLeft() {\r\n       
+    //let                                                   Reserved keyword used
+    before declaring a variable inside a function\r\n        //leftDirection : Vector3                              
+    declaring a variable named \"leftDirection\" of type \"Vector3\"  \r\n       
+    //= new Vector3(-this.XSpeed * Time.deltaTime,0,0)      assigning the \"leftDirection\"
+    variable a value\r\n        let leftDirection = new UnityEngine_1.Vector3(-this.XSpeed
+    * UnityEngine_1.Time.deltaTime, 0, 0);\r\n        //this.gameObject              
+    Reference to the GameObject this script is attached to\r\n        //transform                    
+    Reference to the Transform component that exist on the GameObject this script
+    is attached to\r\n        //Translate                     Function inside the
+    Transform class that takes a \"Vector3\" as a parameter\r\n        //(leftDirectionVector3)       
+    pass in the leftDirectionVector3 variable that you declared and assigned inside
+    this MovePaddleLeft function\r\n        this.gameObject.transform.Translate(leftDirection);\r\n   
+    }\r\n    //Declaring the \"MovePaddleRight()\" function\r\n    MovePaddleRight()
+    {\r\n        let rightDirection = new UnityEngine_1.Vector3(this.XSpeed * UnityEngine_1.Time.deltaTime,
+    0, 0);\r\n        this.gameObject.transform.Translate(rightDirection);\r\n   
+    }\r\n}\r\nexports.default = PaddleScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiUGFkZGxlU2NyaXB0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiUGFkZGxlU2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQTREO0FBQzVELGlEQUFxRDtBQUNyRCwrQ0FBd0M7QUFFeEMsTUFBcUIsWUFBYSxTQUFRLHFDQUFxQjtJQUszRCwrQ0FBK0M7SUFDL0MsS0FBSztRQUNELCtCQUErQjtJQUNuQyxDQUFDO0lBRUQsdUNBQXVDO0lBQ3ZDLE1BQU07UUFFRiwrRUFBK0U7UUFDL0Usa0lBQWtJO1FBRWxJLHFEQUFxRDtRQUVyRCx1RkFBdUY7UUFDdkYsc0pBQXNKO1FBRXRKLCtFQUErRTtRQUMvRSxxSUFBcUk7UUFFckksSUFBSSxtQkFBSyxDQUFDLE1BQU0sQ0FBQyxxQkFBTyxDQUFDLFNBQVMsQ0FBQyxFQUFFO1lBRWpDLDBFQUEwRTtZQUMxRSxJQUFJLENBQUMsY0FBYyxFQUFFLENBQUM7U0FFekI7UUFFRCxtSEFBbUg7UUFDbkgsSUFBSSxtQkFBSyxDQUFDLE1BQU0sQ0FBQyxxQkFBTyxDQUFDLFVBQVUsQ0FBQyxFQUFFO1lBRWxDLDJFQUEyRTtZQUMzRSxJQUFJLENBQUMsZUFBZSxFQUFFLENBQUM7U0FFMUI7SUFFTCxDQUFDO0lBRUQsMkNBQTJDO0lBQzNDLGNBQWM7UUFDViwySEFBMkg7UUFFM0gsc0hBQXNIO1FBRXRILHNHQUFzRztRQUN0RyxJQUFJLGFBQWEsR0FBYSxJQUFJLHFCQUFPLENBQUMsQ0FBQyxJQUFJLENBQUMsTUFBTSxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUMsRUFBQyxDQUFDLENBQUMsQ0FBQztRQUU3RSxzRkFBc0Y7UUFFdEYsNEhBQTRIO1FBRTVILHlHQUF5RztRQUV6Ryw0SUFBNEk7UUFDNUksSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDLGFBQWEsQ0FBQyxDQUFDO0lBQ3ZELENBQUM7SUFFRCw0Q0FBNEM7SUFDNUMsZUFBZTtRQUVYLElBQUksY0FBYyxHQUFhLElBQUkscUJBQU8sQ0FBQyxJQUFJLENBQUMsTUFBTSxHQUFHLGtCQUFJLENBQUMsU0FBUyxFQUFDLENBQUMsRUFBQyxDQUFDLENBQUMsQ0FBQztRQUU3RSxJQUFJLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsY0FBYyxDQUFDLENBQUM7SUFDeEQsQ0FBQztDQUNKO0FBbkVELCtCQW1FQyJ9","assetPath":"Assets/Projects/Pong/PaddleScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"XSpeed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"PaddleScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: c1b5a954eead8b20703d7c787966de9a
   onlyWriteTrigger: 0

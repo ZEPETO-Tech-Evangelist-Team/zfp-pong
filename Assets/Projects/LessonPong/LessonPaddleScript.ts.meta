@@ -21,16 +21,13 @@ ScriptedImporter:
   compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
     { value: true });\r\nconst UnityEngine_1 = require(\"UnityEngine\");\r\nconst
     ZEPETO_Script_1 = require(\"ZEPETO.Script\");\r\nclass LessonPaddleScript extends
-    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    //Start function runs once when
-    the game starts\r\n    Start() {\r\n        this.PaddleSpeed = 10;\r\n       
-    //console.log(\"Inside Start Function\");\r\n        //this.gameObject.GetComponent<Transform>().position
-    = new Vector3(5,-3,0);\r\n    }\r\n    //Update function runs once per frame\r\n   
-    Update() {\r\n        //console.log(\"Inside Update Function\");\r\n        //this.gameObject.transform.Translate(new
-    Vector3(1 * Time.deltaTime,0,0));\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.RightArrow))
-    {\r\n            this.gameObject.transform.Translate(new UnityEngine_1.Vector3(this.PaddleSpeed
+    ZEPETO_Script_1.ZepetoScriptBehaviour {\r\n    Start() {\r\n        this.PaddleSpeed
+    = 10;\r\n    }\r\n    //Update function runs once per frame\r\n    Update() {\r\n       
+    if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.RightArrow)) {\r\n           
+    this.gameObject.transform.Translate(new UnityEngine_1.Vector3(this.PaddleSpeed
     * UnityEngine_1.Time.deltaTime, 0, 0));\r\n        }\r\n        if (UnityEngine_1.Input.GetKey(UnityEngine_1.KeyCode.LeftArrow))
     {\r\n            this.gameObject.transform.Translate(new UnityEngine_1.Vector3(-this.PaddleSpeed
     * UnityEngine_1.Time.deltaTime, 0, 0));\r\n        }\r\n    }\r\n}\r\nexports.default
-    = LessonPaddleScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGVzc29uUGFkZGxlU2NyaXB0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiTGVzc29uUGFkZGxlU2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXNFO0FBQ3RFLGlEQUFxRDtBQUVyRCxNQUFxQixrQkFBbUIsU0FBUSxxQ0FBcUI7SUFHakUsK0NBQStDO0lBQy9DLEtBQUs7UUFDRCxJQUFJLENBQUMsV0FBVyxHQUFHLEVBQUUsQ0FBQztRQUN0Qix1Q0FBdUM7UUFDdkMsMkVBQTJFO0lBQy9FLENBQUM7SUFFRCxxQ0FBcUM7SUFDckMsTUFBTTtRQUNGLHdDQUF3QztRQUN4QywyRUFBMkU7UUFFM0UsSUFBSSxtQkFBSyxDQUFDLE1BQU0sQ0FBQyxxQkFBTyxDQUFDLFVBQVUsQ0FBQyxFQUFFO1lBQ2xDLElBQUksQ0FBQyxVQUFVLENBQUMsU0FBUyxDQUFDLFNBQVMsQ0FBQyxJQUFJLHFCQUFPLENBQUMsSUFBSSxDQUFDLFdBQVcsR0FBRyxrQkFBSSxDQUFDLFNBQVMsRUFBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztTQUMzRjtRQUVELElBQUksbUJBQUssQ0FBQyxNQUFNLENBQUMscUJBQU8sQ0FBQyxTQUFTLENBQUMsRUFBRTtZQUNqQyxJQUFJLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsSUFBSSxxQkFBTyxDQUFDLENBQUMsSUFBSSxDQUFDLFdBQVcsR0FBRyxrQkFBSSxDQUFDLFNBQVMsRUFBQyxDQUFDLEVBQUMsQ0FBQyxDQUFDLENBQUMsQ0FBQztTQUM1RjtJQUNMLENBQUM7Q0FFSjtBQXhCRCxxQ0F3QkMifQ==","assetPath":"Assets/Projects/LessonPong/LessonPaddleScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"PaddleSpeed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"LessonPaddleScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
-  typescriptHash: cb748d6c746f153306b88a8a38a5f10b
+    = LessonPaddleScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGVzc29uUGFkZGxlU2NyaXB0LmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiTGVzc29uUGFkZGxlU2NyaXB0LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsNkNBQXNFO0FBQ3RFLGlEQUFxRDtBQUVyRCxNQUFxQixrQkFBbUIsU0FBUSxxQ0FBcUI7SUFHakUsS0FBSztRQUNELElBQUksQ0FBQyxXQUFXLEdBQUcsRUFBRSxDQUFDO0lBQzFCLENBQUM7SUFFRCxxQ0FBcUM7SUFDckMsTUFBTTtRQUNGLElBQUksbUJBQUssQ0FBQyxNQUFNLENBQUMscUJBQU8sQ0FBQyxVQUFVLENBQUMsRUFBRTtZQUNsQyxJQUFJLENBQUMsVUFBVSxDQUFDLFNBQVMsQ0FBQyxTQUFTLENBQUMsSUFBSSxxQkFBTyxDQUFDLElBQUksQ0FBQyxXQUFXLEdBQUcsa0JBQUksQ0FBQyxTQUFTLEVBQUMsQ0FBQyxFQUFDLENBQUMsQ0FBQyxDQUFDLENBQUM7U0FDM0Y7UUFFRCxJQUFJLG1CQUFLLENBQUMsTUFBTSxDQUFDLHFCQUFPLENBQUMsU0FBUyxDQUFDLEVBQUU7WUFDakMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxTQUFTLENBQUMsU0FBUyxDQUFDLElBQUkscUJBQU8sQ0FBQyxDQUFDLElBQUksQ0FBQyxXQUFXLEdBQUcsa0JBQUksQ0FBQyxTQUFTLEVBQUMsQ0FBQyxFQUFDLENBQUMsQ0FBQyxDQUFDLENBQUM7U0FDNUY7SUFDTCxDQUFDO0NBRUo7QUFsQkQscUNBa0JDIn0=","assetPath":"Assets/Projects/LessonPong/LessonPaddleScript.ts","manifest":{"properties":[{"assembly":"mscorlib","name":"PaddleSpeed","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"LessonPaddleScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 4d3f6c329531c263f467b01649a3bf0a
   onlyWriteTrigger: 0

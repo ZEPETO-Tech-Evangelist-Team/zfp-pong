@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Projects/LessonPong/LessonPongExample.unity
+    guid: fc4eb426385bfd04588013fb77f9adda
+  - enabled: 1
     path: Assets/Projects/PongSFX/PongSceneSFX.unity
     guid: 1a52e385416b80a479f2925e3f0b9f8d
   - enabled: 1

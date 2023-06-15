@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 5c0bf08ff6111de4c9406d150c87b992
+importerOverride: ZEPETO.Script.Compiler:ZEPETO.Script:TypescriptAssetImporter
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: -1123457745, guid: 54cf806323ffe4418a4ce4cc63fe6b9d, type: 3}
+  isAssemblyDeclarations: 0
+  assembly: 
+  generateAllTypes: 1
+  types: []
+  generateWrapper: 0
+  overrideWrapperTypes: 0
+  wrapperTypes: []
+  WrapperFilters: []
+  wrapperOutputDirectory: Generated
+  compiledResult: '{"source":"\"use strict\";\r\nObject.defineProperty(exports, \"__esModule\",
+    { value: true });\r\nconst TMPro_1 = require(\"TMPro\");\r\nconst ZEPETO_Script_1
+    = require(\"ZEPETO.Script\");\r\nclass LessonScoreScript extends ZEPETO_Script_1.ZepetoScriptBehaviour
+    {\r\n    Start() {\r\n        this.ScoreText = this.gameObject.GetComponent($typeof(TMPro_1.TextMeshProUGUI));\r\n   
+    }\r\n    Update() {\r\n    }\r\n    AddToScore() {\r\n        this.ScoreAmount
+    = this.ScoreAmount + 1;\r\n        this.ScoreText.text = this.ScoreAmount.toString();\r\n   
+    }\r\n}\r\nexports.default = LessonScoreScript;\r\n//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiTGVzc29uU2NvcmVTY3JpcHQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJMZXNzb25TY29yZVNjcmlwdC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLGlDQUF3QztBQUV4QyxpREFBcUQ7QUFFckQsTUFBcUIsaUJBQWtCLFNBQVEscUNBQXFCO0lBS2hFLEtBQUs7UUFDRCxJQUFJLENBQUMsU0FBUyxHQUFHLElBQUksQ0FBQyxVQUFVLENBQUMsWUFBWSxTQUFDLHVCQUFlLEVBQUcsQ0FBQztJQUNyRSxDQUFDO0lBRUQsTUFBTTtJQUVOLENBQUM7SUFFRCxVQUFVO1FBQ04sSUFBSSxDQUFDLFdBQVcsR0FBRyxJQUFJLENBQUMsV0FBVyxHQUFHLENBQUMsQ0FBQztRQUV4QyxJQUFJLENBQUMsU0FBUyxDQUFDLElBQUksR0FBRyxJQUFJLENBQUMsV0FBVyxDQUFDLFFBQVEsRUFBRSxDQUFDO0lBQ3RELENBQUM7Q0FFSjtBQW5CRCxvQ0FtQkMifQ==","assetPath":"Assets/Projects/LessonPong/LessonScoreScript.ts","manifest":{"properties":[{"assembly":"Unity.TextMeshPro","name":"ScoreText","type":"TMPro.TextMeshProUGUI","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]},{"assembly":"mscorlib","name":"ScoreAmount","type":"System.Single","isArray":false,"initValue":[],"enumKeys":[],"enumValues":[],"attributes":[]}],"name":"LessonScoreScript","description":"","hasAnimatorMove":false},"isCompiled":true}'
+  typescriptHash: 3658e8fbaca374f0a9cf2945c2140601
+  onlyWriteTrigger: 0
